@@ -1,38 +1,48 @@
+document.getElementById("dead").innerHTML = "Kenny est mort 0 fois."
+let dead = 0;
 
+let kenny = document.getElementById('kenny');
 
 document.getElementById('up').addEventListener('click',function() {
-    let t = parseInt(document.getElementById('kenny').style.top);
-    console.log(t);
+    let t = parseInt(kenny.style.top);
     if(t > 0){
         t = t - 10;
-        document.getElementById('kenny').style.top = t + 'px';
+        kenny.style.top = t + 'px';
     }
 });
 
 document.getElementById('left').addEventListener("click",function() {
-    let l = parseInt(document.getElementById('kenny').style.left);
-    console.log(l);
-    if(l > 0){
-        l = l - 10;
-        document.getElementById('kenny').style.left = l + 'px';
+    let l = parseInt(kenny.style.left);
+    if(l > 50){
+        l -= 10;
+        kenny.style.left = l + 'px';
+    }
+    else {
+        kenny.style.animationName = "rotate";
+        kenny.style.animationDuration = "1s";
+        // kenny.style.animationFillMode = "backwards";
+        kenny.addEventListener("animationend", function (){
+            alert("kenny is dead !!!");
+            kenny.style.left = "200px";
+            kenny.style.top = "200px";
+        });
+        dead ++;
+        document.getElementById("dead").innerHTML = "Kenny est mort " + dead + " fois."
     }
 });
 
 document.getElementById('right').addEventListener("click",function() {
-    let r = parseInt(document.getElementById('kenny').style.left);
-    console.log(r);
+    let r = parseInt(kenny.style.left);
     if(r < (500-32)){
         r = r + 10;
-        document.getElementById('kenny').style.left = r + 'px';
+        kenny.style.left = r + 'px';
     }
 });
 
 document.getElementById('down').addEventListener("click",function() {
-    let d = parseInt(document.getElementById('kenny').style.top);
-    console.log(d);
+    let d = parseInt(kenny.style.top);
     if (d < 500-32){
         d = d + 10;
-        document.getElementById('kenny').style.top = d + 'px';
+        kenny.style.top = d + 'px';
     }
 });
-

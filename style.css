@@ -6,16 +6,32 @@
     border: 5px solid;
 }
 
+#zone {
+    background-color: red;
+    width: 50px;
+    height: 500px;
+    position: absolute;
+}
+
 #kenny {
     background: url("img/Kenny-icon.png");
     width: 32px;
     height: 32px;
     position: absolute;
-    top: 200px;
-    left: 200px;
+
 }
 
 #buttons {
     text-align: center;
     margin-top: 25px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateX(-10px);
+    }
+    100%{
+        transform-origin: left bottom;
+        transform: rotate(-90deg);
+    }
 }
