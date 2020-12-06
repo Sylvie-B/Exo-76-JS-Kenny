@@ -2,24 +2,37 @@
 
 document.getElementById('up').addEventListener('click',function() {
     let t = parseInt(document.getElementById('kenny').style.top);
-    t = t - 10;
-    document.getElementById('kenny').style.top = t + 'px';
+    console.log(t);
+    if(t > 0){
+        t = t - 10;
+        document.getElementById('kenny').style.top = t + 'px';
+    }
 });
 
 document.getElementById('left').addEventListener("click",function() {
     let l = parseInt(document.getElementById('kenny').style.left);
-    l = l - 10;
-    document.getElementById('kenny').style.left = l + 'px';
+    console.log(l);
+    if(l > 0){
+        l = l - 10;
+        document.getElementById('kenny').style.left = l + 'px';
+    }
 });
 
 document.getElementById('right').addEventListener("click",function() {
     let r = parseInt(document.getElementById('kenny').style.left);
-    r = r + 10;
-    document.getElementById('kenny').style.left = r + 'px';
+    console.log(r);
+    if(r < (500-32)){
+        r = r + 10;
+        document.getElementById('kenny').style.left = r + 'px';
+    }
 });
 
 document.getElementById('down').addEventListener("click",function() {
     let d = parseInt(document.getElementById('kenny').style.top);
-    d = d + 10;
-    document.getElementById('kenny').style.top = d + 'px';
+    console.log(d);
+    if (d < 500-32){
+        d = d + 10;
+        document.getElementById('kenny').style.top = d + 'px';
+    }
 });
+
