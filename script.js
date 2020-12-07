@@ -1,6 +1,5 @@
 document.getElementById("dead").innerHTML = "Kenny est mort 0 fois."
 let dead = 0;
-
 let kenny = document.getElementById('kenny');
 
 document.getElementById('up').addEventListener('click',function() {
@@ -18,14 +17,17 @@ document.getElementById('left').addEventListener("click",function() {
         kenny.style.left = l + 'px';
     }
     else {
-        kenny.style.animationName = "rotate";
-        kenny.style.animationDuration = "1s";
-        // kenny.style.animationFillMode = "backwards";
-        kenny.addEventListener("animationend", function (){
+        // kenny.style.animationName = "rotate";
+        // kenny.style.animationDuration = "1s";
+        // // kenny.style.animationFillMode = "backwards";
+        // kenny.addEventListener("animationend", function (){
+        //     alert("kenny is dead !!!");
+        //     kenny.style.left = "200px";
+        //     kenny.style.top = "200px";
+        // });
             alert("kenny is dead !!!");
             kenny.style.left = "200px";
             kenny.style.top = "200px";
-        });
         dead ++;
         document.getElementById("dead").innerHTML = "Kenny est mort " + dead + " fois."
     }
